@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragostea Mea pentru Monica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f8d7da;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            display: none; /* Hidden initially */
+        }
+
+        .countdown {
+            font-size: 2em;
+            color: #e32a2a;
+        }
+
+        .show-button {
+            display: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #e32a2a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .show-button:hover {
+            background-color: #c81d1d;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: #e32a2a;
+        }
+
+        .title {
+            font-size: 2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .signature {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="countdown" id="countdown">10</div>
+<button id="showButton" class="show-button">APASA-MA MONICA</button>
+
+<div class="container" id="messageContainer">
+    <div class="heart">❤️</div>
+    <div class="title">Monica, te iubesc din tot sufletul!</div>
+    <div class="message">
+        TU ESTI PAPUSICA MEA SI DOAR A MEA. Esti cea mai frumoasa si desteapta fetita ( femeie in devenire  )pe care o stiu si o iubesc din tot sufletul meu, MONICAAAAAAAAA TE IUBESC BAI FETITO <3
+    </div>
+    <div class="signature">Cu dragoste, Costin</div>
+</div>
+
+<script>
+    let countdown = 10;
+    const countdownElement = document.getElementById('countdown');
+    const showButton = document.getElementById('showButton');
+    const messageContainer = document.getElementById('messageContainer');
+
+    const countdownInterval = setInterval(() => {
+        countdown--;
+        countdownElement.textContent = countdown;
+
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            countdownElement.style.display = 'none';
+            showButton.style.display = 'block';
+        }
+    }, 1000);
+
+    showButton.addEventListener('click', () => {
+        showButton.style.display = 'none';
+        messageContainer.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
